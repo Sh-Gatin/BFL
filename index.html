@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Банкротство физических лиц — консультация юриста</title>
+  <meta name="description" content="Банкротство физлиц по РФ: внесудебно через МФЦ или через суд. Разбор ситуации и план действий." />
+  <meta property="og:title" content="Банкротство физических лиц — консультация юриста" />
+  <meta property="og:description" content="МФЦ или суд. Строго по фактам: долги, доход, имущество, риски сделок." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#070A0F; --panel:#0D121B; --text:#E9EDF4; --muted:#A9B2C3;
+      --gold:#C7A76A; --stroke:rgba(199,167,106,.22);
+      --shadow:0 18px 45px rgba(0,0,0,.45);
+      --radius:18px; --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(199,167,106,.16), transparent 55%),
+        radial-gradient(900px 500px at 90% 0%, rgba(111,170,255,.10), transparent 58%),
+        linear-gradient(180deg, #05070B, var(--bg));
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto;}
+    .header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,15,.55);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .header__row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__mark{
+      width:34px;height:34px;border-radius:12px;
+      background: linear-gradient(135deg, rgba(199,167,106,.95), rgba(199,167,106,.20));
+      box-shadow: 0 10px 30px rgba(199,167,106,.18);
+    }
+    .brand__title{font-weight:700;letter-spacing:.2px}
+    .brand__sub{font-size:12px;color:var(--muted);margin-top:2px}
+    .nav__toggle{
+      display:none; background:transparent; color:var(--text);
+      border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:10px 12px; cursor:pointer;
+    }
+    .nav__links{display:flex;gap:18px;align-items:center}
+    .nav__links a{color:var(--muted)}
+    .nav__links a:hover{color:var(--text);text-decoration:none}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:transparent;color:var(--text);
+      transition: transform .15s ease, border-color .15s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);text-decoration:none;border-color: rgba(255,255,255,.22)}
+    .btn--primary{
+      background: linear-gradient(135deg, rgba(199,167,106,.95), rgba(199,167,106,.20));
+      border-color: var(--stroke);
+    }
+    .btn--secondary{background: rgba(255,255,255,.06)}
+    .btn--ghost{border-color: rgba(199,167,106,.35)}
+
+    .hero{padding:46px 0 26px}
+    .hero__grid{display:grid;grid-template-columns: 1.1fr .9fr; gap:26px; align-items:start}
+    .pill{
+      display:inline-block; padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(199,167,106,.30); background: rgba(199,167,106,.10);
+      font-size:12px;
+    }
+    .h1{font-size:44px;line-height:1.08;margin:14px 0 10px}
+    .lead{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 16px}
+    .hero__cta{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 14px}
+    .ticks{margin:14px 0 0;padding-left:18px;color:var(--muted)}
+    .ticks li{margin:8px 0}
+    .note{margin-top:14px;color: rgba(233,237,244,.78);font-size:12px}
+
+    .section{padding:38px 0}
+    .section--dark{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.00));
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .h2{margin:0 0 8px;font-size:30px;font-weight:700}
+    .section__lead{margin:0 0 18px;color:var(--muted)}
+
+    .card{
+      background: rgba(13,18,27,.78);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card--glass{background: rgba(13,18,27,.58); border: 1px solid rgba(199,167,106,.18)}
+    .grid2{display:grid;grid-template-columns: 1fr 1fr;gap:14px}
+    .grid3{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px}
+    .h3{margin:0 0 6px;font-size:22px;font-weight:700}
+    .muted{color:var(--muted)}
+    .bullets{margin:12px 0 14px;padding-left:18px;color:var(--muted)}
+    .bullets li{margin:8px 0}
+    .price{
+      margin:10px 0 12px;font-size:14px;color: rgba(233,237,244,.92);
+      padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(199,167,106,.20); background: rgba(199,167,106,.08);
+      display:inline-block;
+    }
+
+    label{display:grid;gap:6px;color:var(--muted);font-size:12px}
+    input{
+      padding:12px 12px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22); color:var(--text); outline:none;
+    }
+    input:focus{border-color: rgba(199,167,106,.45)}
+    .mini-form{display:grid;gap:10px}
+    .mini-form__hint{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.45}
+
+    .steps{display:grid;grid-template-columns: repeat(4, 1fr);gap:12px}
+    .step{padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background: rgba(0,0,0,.18)}
+    .step__n{color:var(--gold);font-weight:700;letter-spacing:.12em;font-size:12px}
+    .step__t{margin-top:8px;font-size:18px;font-weight:700}
+    .step__d{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.5}
+
+    .review__top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .review__who{font-weight:700}
+    .review__tag{font-size:12px;padding:6px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background: rgba(255,255,255,.05);color:var(--muted)}
+    .review__text{color:var(--muted);line-height:1.6;margin:10px 0 14px}
+
+    dialog.video{
+      width:min(920px, calc(100% - 24px));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px; padding:0;
+      background: rgba(7,10,15,.96); color:var(--text);
+    }
+    dialog.video::backdrop{background: rgba(0,0,0,.70)}
+    .video__box{padding:12px}
+    .video__close{float:right;margin:6px 6px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background: rgba(255,255,255,.06);color:var(--text);padding:8px 10px;cursor:pointer}
+    .video__frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
+    .video__frame iframe{width:100%;height:100%;border:0}
+
+    .faq{display:grid;gap:10px}
+    details.faq__item{border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:12px 14px;background: rgba(0,0,0,.16)}
+    details.faq__item summary{cursor:pointer;font-weight:700}
+    details.faq__item p{color:var(--muted);margin:10px 0 0;line-height:1.6}
+
+    .contact{display:grid;grid-template-columns: 1fr 1fr auto;gap:14px;align-items:center}
+    .contact__label{color:var(--muted);font-size:12px}
+    .contact__value{font-weight:700;display:inline-block;margin-top:6px}
+    .contact__hint{color:var(--muted);margin-top:6px;font-size:12px}
+    .contact__actions{display:flex;gap:10px;justify-content:flex-end}
+    .legal{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.55}
+
+    .footer{border-top:1px solid rgba(255,255,255,.06);padding:18px 0}
+    .footer__row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    @media (max-width: 980px){
+      .hero__grid{grid-template-columns: 1fr}
+      .h1{font-size:38px}
+      .steps{grid-template-columns: 1fr 1fr}
+      .grid3{grid-template-columns: 1fr}
+      .grid2{grid-template-columns: 1fr}
+      .contact{grid-template-columns: 1fr}
+      .contact__actions{justify-content:flex-start}
+    }
+    @media (max-width: 720px){
+      .nav__toggle{display:inline-flex}
+      .nav__links{
+        display:none; position:absolute; right:20px; top:64px;
+        padding:12px; border-radius:16px;
+        background: rgba(13,18,27,.94); border:1px solid rgba(255,255,255,.10);
+        box-shadow: var(--shadow);
+        flex-direction:column; align-items:stretch; gap:10px; min-width: 220px;
+      }
+      .nav__links.is-open{display:flex}
+      .h1{font-size:34px}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__row">
+      <div class="brand">
+        <div class="brand__mark" aria-hidden="true"></div>
+        <div>
+          <div class="brand__title">Юрист по банкротству</div>
+          <div class="brand__sub">Консультации и сопровождение по РФ</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Меню">
+        <button class="nav__toggle" type="button" aria-label="Открыть меню" aria-expanded="false">Меню</button>
+        <div class="nav__links">
+          <a href="#services">Услуги</a>
+          <a href="#steps">Как работаем</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn btn--ghost" href="#contacts">Контакты</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <p class="pill">МФЦ или суд — подберём законный маршрут</p>
+          <h1 class="h1">Банкротство физлиц: спокойный план действий без “громких обещаний”</h1>
+          <p class="lead">
+            На консультации разберём долги, доход, имущество, риски сделок и исполнительные производства — и скажем,
+            какой вариант реально подходит: внесудебное через МФЦ или судебная процедура.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="https://t.me/Shafkat_Gatin" target="_blank" rel="noopener">Написать в Telegram</a>
+            <a class="btn btn--secondary" href="tel:+79196909709">Позвонить</a>
+          </div>
+
+          <ul class="ticks">
+            <li>Сначала оценка рисков — потом решение.</li>
+            <li>Понятные этапы и сроки, без “магии”.</li>
+            <li>Можно начать дистанционно.</li>
+          </ul>
+
+          <p class="note">Важно: итоговый план зависит от документов и фактов; “гарантии без анализа” — плохая практика.</p>
+        </div>
+
+        <div>
+          <div class="card card--glass">
+            <div class="h3">Быстрая заявка (без хранения данных)</div>
+            <p class="muted" style="margin:0 0 14px">
+              GitHub Pages — статичный хостинг, форма не отправляет данные на сервер. Кнопка откроет Telegram и скопирует текст заявки.
+            </p>
+
+            <form class="mini-form" id="leadForm" autocomplete="on">
+              <label>Имя <input name="name" type="text" placeholder="Иван" /></label>
+              <label>Телефон <input name="phone" type="tel" placeholder="+7 (___) ___‑__‑__" /></label>
+              <label>Долг (примерно) <input name="debt" type="text" placeholder="Напр. 850 000 ₽" /></label>
+              <button class="btn btn--primary" type="submit">Открыть Telegram</button>
+              <p class="mini-form__hint">После открытия Telegram просто вставьте сообщение (оно будет скопировано).</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="h2">Две услуги</h2>
+        <p class="section__lead">Оставляем только то, что реально продаётся: МФЦ и суд.</p>
+
+        <div class="grid2">
+          <article class="card">
+            <h3 class="h3">Внесудебное банкротство через МФЦ</h3>
+            <p class="muted">Когда по критериям можно пройти процедуру без суда.</p>
+            <ul class="bullets">
+              <li>Проверка соответствия условиям.</li>
+              <li>Подготовка пакета документов.</li>
+              <li>Сопровождение подачи и контроль статуса.</li>
+            </ul>
+            <div class="price">от 50 000 ₽</div>
+            <a class="btn btn--secondary" href="#contacts">Уточнить по ситуации</a>
+          </article>
+
+          <article class="card">
+            <h3 class="h3">Судебное банкротство</h3>
+            <p class="muted">Если внесудебное не подходит или есть сложность (имущество/сделки/кредиторы).</p>
+            <ul class="bullets">
+              <li>Стратегия и пошаговый план.</li>
+              <li>Подготовка и оформление документов.</li>
+              <li>Сопровождение по этапам с партнёрами.</li>
+            </ul>
+            <div class="price">от 150 000 ₽</div>
+            <a class="btn btn--secondary" href="#contacts">Получить план</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps" class="section section--dark">
+      <div class="container">
+        <h2 class="h2">Как работаем</h2>
+        <div class="steps">
+          <div class="step"><div class="step__n">01</div><div class="step__t">Заявка</div><div class="step__d">Пишете в Telegram или звоните.</div></div>
+          <div class="step"><div class="step__n">02</div><div class="step__t">Разбор</div><div class="step__d">Собираем факты и документы, считаем риски.</div></div>
+          <div class="step"><div class="step__n">03</div><div class="step__t">Маршрут</div><div class="step__d">МФЦ или суд — фиксируем план и стоимость.</div></div>
+          <div class="step"><div class="step__n">04</div><div class="step__t">Сопровождение</div><div class="step__d">Ведём по этапам и держим связь до результата.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <div class="container">
+        <h2 class="h2">Отзывы (видео)</h2>
+        <p class="section__lead">Пока стоят плейсхолдеры — пришлёте ссылки, и их можно будет заменить.</p>
+
+        <div class="grid3">
+          <article class="card">
+            <div class="review__top"><div class="review__who">Клиент</div><div class="review__tag">Видеоотзыв</div></div>
+            <p class="review__text">“Сняли напряжение: объяснили этапы и риски простыми словами.”</p>
+            <button class="btn btn--primary js-open-video" data-url="https://www.youtube.com/embed/VIDEO_ID_1" type="button">Смотреть</button>
+          </article>
+
+          <article class="card">
+            <div class="review__top"><div class="review__who">Клиент</div><div class="review__tag">Видеоотзыв</div></div>
+            <p class="review__text">“Сначала проверили МФЦ, потом честно сказали — только суд.”</p>
+            <button class="btn btn--primary js-open-video" data-url="https://www.youtube.com/embed/VIDEO_ID_2" type="button">Смотреть</button>
+          </article>
+
+          <article class="card">
+            <div class="review__top"><div class="review__who">Клиент</div><div class="review__tag">Видеоотзыв</div></div>
+            <p class="review__text">“Без давления. По фактам. С понятной логикой действий.”</p>
+            <button class="btn btn--primary js-open-video" data-url="https://www.youtube.com/embed/VIDEO_ID_3" type="button">Смотреть</button>
+          </article>
+        </div>
+
+        <dialog class="video" id="videoDialog" aria-label="Видеоотзыв">
+          <div class="video__box">
+            <button class="video__close" type="button" aria-label="Закрыть">Закрыть</button>
+            <div class="video__frame">
+              <iframe id="videoFrame" title="Видео" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <section id="faq" class="section section--dark">
+      <div class="container">
+        <h2 class="h2">FAQ</h2>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Можно ли списать долги “точно”?</summary>
+            <p>Ответ даётся только после анализа: долги, доход, имущество, сделки, исполнительные производства.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Что лучше: МФЦ или суд?</summary>
+            <p>Зависит от критериев и фактов; на консультации выбирается маршрут, который реально применим.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Работаете дистанционно?</summary>
+            <p>Да: первичный разбор, сбор данных и часть документов можно организовать удалённо.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="container">
+        <h2 class="h2">Контакты</h2>
+
+        <div class="contact card">
+          <div>
+            <div class="contact__label">Телефон</div>
+            <a class="contact__value" href="tel:+79196909709">+7 919 690‑97‑09</a>
+            <div class="contact__hint">Звонки/сообщения: 10:00–20:00 (МСК)</div>
+          </div>
+          <div>
+            <div class="contact__label">Telegram</div>
+            <a class="contact__value" href="https://t.me/Shafkat_Gatin" target="_blank" rel="noopener">@Shafkat_Gatin</a>
+            <div class="
