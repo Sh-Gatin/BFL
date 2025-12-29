@@ -10,34 +10,35 @@
   <meta property="og:type" content="website" />
 
   <style>
-  /* ===== НОВАЯ СОВРЕМЕННАЯ ТЕМА ===== */
+  /* ===== ПРОФЕССИОНАЛЬНАЯ ТЕМА ДЛЯ ЮРИДИЧЕСКИХ УСЛУГ ===== */
   :root {
-    --primary: #2A6BCC;       /* Тёплый синий вместо чёрного */
-    --primary-light: #E8F1FF;
-    --secondary: #FF7A45;     /* Акцентный оранжевый */
-    --accent: #00C896;        /* Зелёный для позитива */
-    --dark: #1A2B4D;          /* Тёмно-синий вместо чёрного */
-    --light: #F8FAFF;
-    --gray: #8A9BB2;
-    --gradient: linear-gradient(135deg, var(--primary) 0%, #3A8BFF 100%);
-    --shadow: 0 8px 24px rgba(42, 107, 204, 0.12);
-    --radius: 16px;
+    --primary: #1A365D;       /* Глубокий тёмно-синий вместо чёрного */
+    --primary-light: #E6EEF8;
+    --secondary: #2D3748;     /* Тёмно-серый для акцентов */
+    --accent: #2A6BCC;        /* Синий для кнопок и акцентов */
+    --light: #F7FAFC;
+    --dark: #1A202C;
+    --gray: #718096;
+    --border: #E2E8F0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 8px;
   }
 
   body {
-    font-family: 'Inter', 'Open Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--dark);
-    background: var(--light);
+    background: white;
     line-height: 1.6;
+    font-weight: 400;
   }
 
   /* ===== ШАПКА ===== */
   .navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    background: white !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     padding: 1rem 0;
-    border-bottom: none;
+    border-bottom: 1px solid var(--border);
   }
 
   .navbar-brand {
@@ -49,50 +50,46 @@
   }
 
   .navbar-brand:before {
-    content: "🛡️";
+    content: "⚖️";
     margin-right: 10px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .navbar-nav .nav-link {
     color: var(--dark) !important;
     font-weight: 500;
-    margin: 0 0.5rem;
-    border-radius: 8px;
+    margin: 0 0.3rem;
     padding: 0.5rem 1rem !important;
-    transition: all 0.3s;
+    transition: color 0.2s;
+    border-radius: var(--radius);
   }
 
   .navbar-nav .nav-link:hover {
+    color: var(--accent) !important;
     background: var(--primary-light);
-    color: var(--primary) !important;
-    transform: translateY(-2px);
   }
 
   .btn-outline-success {
-    border: 2px solid var(--primary);
-    color: var(--primary);
+    border: 1px solid var(--accent);
+    color: var(--accent);
     font-weight: 600;
-    border-radius: 10px;
-    padding: 0.6rem 1.8rem;
-    transition: all 0.3s;
+    border-radius: var(--radius);
+    padding: 0.5rem 1.5rem;
+    transition: all 0.2s;
   }
 
   .btn-outline-success:hover {
-    background: var(--primary);
+    background: var(--accent);
     color: white;
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
   }
 
   /* ===== ГЛАВНЫЙ ЭКРАН ===== */
   .jumbotron {
-    background: var(--gradient);
+    background: linear-gradient(135deg, #1A365D 0%, #2A4365 100%);
     color: white;
-    border-radius: 0 0 40px 40px;
-    padding: 5rem 0;
+    padding: 4rem 0;
     margin-bottom: 0;
-    text-align: center;
+    border-radius: 0;
     position: relative;
     overflow: hidden;
   }
@@ -102,43 +99,44 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.05"/></svg>');
-    background-size: cover;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.03"/></svg>');
+    background-size: 120px 120px;
   }
 
   .jumbotron h1 {
-    font-weight: 800;
-    font-size: 3.2rem;
+    font-weight: 700;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     position: relative;
+    line-height: 1.2;
   }
 
   .jumbotron .lead {
-    font-size: 1.3rem;
-    opacity: 0.95;
+    font-size: 1.2rem;
+    opacity: 0.9;
     max-width: 700px;
     margin: 0 auto 2rem;
+    font-weight: 400;
   }
 
   .btn-lg {
-    background: white;
-    color: var(--primary);
+    background: var(--accent);
+    color: white;
     border: none;
-    padding: 1rem 2.5rem;
-    font-weight: 700;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    transition: all 0.3s;
+    padding: 0.9rem 2.5rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition: all 0.2s;
     font-size: 1.1rem;
+    position: relative;
   }
 
   .btn-lg:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(255, 122, 69, 0.3);
-    background: var(--secondary);
-    color: white;
+    background: #1E4E8C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 107, 204, 0.3);
   }
 
   /* ===== БЛОКИ УСЛУГ ===== */
@@ -148,113 +146,115 @@
   }
 
   .card {
-    border: none;
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    transition: all 0.4s;
+    transition: all 0.3s;
     height: 100%;
     background: white;
     overflow: hidden;
   }
 
   .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(42, 107, 204, 0.2);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
   }
 
   .card-title {
     color: var(--primary);
-    font-weight: 700;
-    font-size: 1.4rem;
+    font-weight: 600;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
   }
 
   .card-title:before {
-    content: "✓";
-    background: var(--primary-light);
-    color: var(--primary);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-    font-weight: bold;
+    content: "•";
+    color: var(--accent);
+    font-size: 2rem;
+    margin-right: 10px;
+    line-height: 1;
   }
 
   .card-text {
     color: var(--gray);
+    font-size: 0.95rem;
   }
 
   /* ===== ФОРМА ===== */
   .bg-light {
-    background: var(--primary-light) !important;
-    border-radius: var(--radius);
-    padding: 3rem !important;
+    background: var(--light) !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 0 !important;
   }
 
   .display-4 {
-    color: var(--dark);
-    font-weight: 800;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2.2rem;
   }
 
   .form-control {
-    border: 2px solid #D6E4FF;
-    border-radius: 10px;
-    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.8rem 1rem;
     font-size: 1rem;
-    transition: all 0.3s;
+    transition: all 0.2s;
   }
 
   .form-control:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 0.25rem rgba(42, 107, 204, 0.25);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(42, 107, 204, 0.15);
   }
 
   .btn-success {
-    background: var(--secondary);
+    background: var(--accent);
     border: none;
-    border-radius: 10px;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: all 0.3s;
+    border-radius: var(--radius);
+    padding: 0.9rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
     width: 100%;
   }
 
   .btn-success:hover {
-    background: #FF5A1F;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255, 122, 69, 0.3);
+    background: #1E4E8C;
   }
 
   /* ===== ФУТЕР ===== */
   footer {
-    background: var(--dark);
+    background: var(--primary);
     color: white;
     padding: 3rem 0 1.5rem;
   }
 
+  footer h5 {
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
   footer a {
-    color: #B8C7E0;
+    color: #CBD5E0;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s;
+    font-weight: 400;
   }
 
   footer a:hover {
     color: white;
-    text-decoration: underline;
   }
 
   /* ===== ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ ===== */
   .badge-success {
     background: var(--accent) !important;
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
     font-weight: 600;
+    font-size: 0.8rem;
   }
 
   .text-muted {
@@ -262,47 +262,27 @@
   }
 
   hr {
-    opacity: 0.2;
+    opacity: 0.1;
+    margin: 2rem 0;
   }
 
   /* ===== АДАПТИВ ===== */
   @media (max-width: 768px) {
     .jumbotron h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
+    
+    .jumbotron .lead {
+      font-size: 1.1rem;
+    }
+    
     .jumbotron {
       padding: 3rem 1rem;
     }
-    .bg-light {
-      padding: 2rem !important;
+    
+    .display-4 {
+      font-size: 1.8rem;
     }
-  }
-<!-- Добавьте этот блок ПЕРЕД формой для повышения доверия -->
-<div class="container text-center py-5">
-  <h2 class="mb-4">Мы помогли сохранить имущество <span class="text-primary">более 200 клиентам</span> в Татарстане</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-3 mb-4">
-      <div class="h1 text-primary font-weight-bold">98%</div>
-      <p>успешных дел</p>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="h1 text-primary font-weight-bold">24/7</div>
-      <p>поддержка клиентов</p>
-    </div>
-    <div class="col-md-3 mb-4">
-      <div class="h1 text-primary font-weight-bold">0₽</div>
-      <p>предоплаты</p>
-    </div>
-  </div>
-</div>
-
-<!-- Добавьте эти стили для нового блока -->
-<style>
-  .stats-block {
-    background: linear-gradient(135deg, #F0F7FF 0%, #FFFFFF 100%);
-    border-radius: 24px;
-    padding: 3rem;
-    margin: 2rem 0;
   }
   </style>
 </head>
@@ -491,4 +471,5 @@
             <div class="contact__label">Telegram</div>
             <a class="contact__value" href="https://t.me/Shafkat_Gatin" target="_blank" rel="noopener">@Shafkat_Gatin</a>
             <div class="
+
 
