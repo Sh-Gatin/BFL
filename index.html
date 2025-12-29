@@ -10,91 +10,139 @@
   <meta property="og:type" content="website" />
 
   <style>
-  /* ===== ПРОФЕССИОНАЛЬНАЯ ТЕМА ДЛЯ ЮРИДИЧЕСКИХ УСЛУГ ===== */
-  :root {
-    --primary: #1A365D;       /* Глубокий тёмно-синий вместо чёрного */
+/* ===== ПРОФЕССИОНАЛЬНАЯ ТЕМА ===== */
+:root {
+    --primary: #1A365D;
     --primary-light: #E6EEF8;
-    --secondary: #2D3748;     /* Тёмно-серый для акцентов */
-    --accent: #2A6BCC;        /* Синий для кнопок и акцентов */
+    --accent: #2A6BCC;
     --light: #F7FAFC;
     --dark: #1A202C;
     --gray: #718096;
     --border: #E2E8F0;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --radius: 8px;
-  }
+}
 
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+/* ===== ОСНОВНЫЕ СТИЛИ ===== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--dark);
     background: white;
     line-height: 1.6;
-    font-weight: 400;
-  }
+    margin: 0;
+    padding: 0;
+}
 
-  /* ===== ШАПКА ===== */
-  .navbar {
-    background: white !important;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* ===== ШАПКА ===== */
+.header {
+    background: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     padding: 1rem 0;
     border-bottom: 1px solid var(--border);
-  }
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-  .navbar-brand {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary) !important;
+.header__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
     display: flex;
     align-items: center;
-  }
+    gap: 12px;
+}
 
-  .navbar-brand:before {
+.brand__mark {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 6px;
+    position: relative;
+}
+
+.brand__mark::after {
     content: "⚖️";
-    margin-right: 10px;
-    font-size: 1.5rem;
-  }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
 
-  .navbar-nav .nav-link {
-    color: var(--dark) !important;
-    font-weight: 500;
-    margin: 0 0.3rem;
-    padding: 0.5rem 1rem !important;
-    transition: color 0.2s;
+.brand__title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.brand__sub {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.nav__toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-  }
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+}
 
-  .navbar-nav .nav-link:hover {
-    color: var(--accent) !important;
+.nav__links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav__links a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    transition: all 0.2s;
+}
+
+.nav__links a:hover {
+    color: var(--accent);
     background: var(--primary-light);
-  }
+}
 
-  .btn-outline-success {
+.btn--ghost {
     border: 1px solid var(--accent);
     color: var(--accent);
     font-weight: 600;
-    border-radius: var(--radius);
-    padding: 0.5rem 1.5rem;
-    transition: all 0.2s;
-  }
+}
 
-  .btn-outline-success:hover {
+.btn--ghost:hover {
     background: var(--accent);
     color: white;
-  }
+}
 
-  /* ===== ГЛАВНЫЙ ЭКРАН ===== */
-  .jumbotron {
+/* ===== ГЕРОЙ ===== */
+.hero {
     background: linear-gradient(135deg, #1A365D 0%, #2A4365 100%);
     color: white;
-    padding: 4rem 0;
-    margin-bottom: 0;
-    border-radius: 0;
+    padding: 80px 0;
     position: relative;
     overflow: hidden;
-  }
+}
 
-  .jumbotron:before {
+.hero::before {
     content: "";
     position: absolute;
     top: 0;
@@ -103,187 +151,393 @@
     bottom: 0;
     background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.03"/></svg>');
     background-size: 120px 120px;
-  }
+}
 
-  .jumbotron h1 {
-    font-weight: 700;
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
+.hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
     position: relative;
-    line-height: 1.2;
-  }
+    z-index: 1;
+}
 
-  .jumbotron .lead {
+@media (max-width: 768px) {
+    .hero__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pill {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+.lead {
     font-size: 1.2rem;
     opacity: 0.9;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    font-weight: 400;
-  }
+    max-width: 600px;
+    margin: 0 0 30px 0;
+}
 
-  .btn-lg {
+.hero__cta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.btn--primary {
     background: var(--accent);
     color: white;
-    border: none;
-    padding: 0.9rem 2.5rem;
-    font-weight: 600;
-    border-radius: var(--radius);
-    transition: all 0.2s;
-    font-size: 1.1rem;
-    position: relative;
-  }
+}
 
-  .btn-lg:hover {
+.btn--primary:hover {
     background: #1E4E8C;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(42, 107, 204, 0.3);
-  }
+}
 
-  /* ===== БЛОКИ УСЛУГ ===== */
-  .container.my-5 {
-    margin-top: 4rem !important;
-    margin-bottom: 4rem !important;
-  }
+.btn--secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-  .card {
+.btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.ticks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.ticks li {
+    padding-left: 28px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.ticks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* ===== КАРТОЧКИ ===== */
+.card {
+    background: white;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    padding: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s;
-    height: 100%;
-    background: white;
-    overflow: hidden;
-  }
+}
 
-  .card:hover {
-    box-shadow: var(--shadow-lg);
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-color: var(--accent);
-  }
+}
 
-  .card-title {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 1.2rem;
+.card--glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== ФОРМА ===== */
+.mini-form {
     display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
+    flex-direction: column;
+    gap: 16px;
+}
 
-  .card-title:before {
-    content: "•";
-    color: var(--accent);
-    font-size: 2rem;
-    margin-right: 10px;
-    line-height: 1;
-  }
+.mini-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
 
-  .card-text {
-    color: var(--gray);
-    font-size: 0.95rem;
-  }
+.mini-form input {
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+}
 
-  /* ===== ФОРМА ===== */
-  .bg-light {
-    background: var(--light) !important;
+.mini-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mini-form__hint {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin: 10px 0 0 0;
+}
+
+/* ===== СЕКЦИИ ===== */
+.section {
+    padding: 80px 0;
+}
+
+.section--dark {
+    background: var(--light);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding: 3rem 0 !important;
-  }
+}
 
-  .display-4 {
-    color: var(--primary);
-    font-weight: 700;
+.h2 {
     font-size: 2.2rem;
-  }
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 16px 0;
+}
 
-  .form-control {
+.section__lead {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin: 0 0 40px 0;
+    max-width: 700px;
+}
+
+/* ===== СЕТКИ ===== */
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ===== УСЛУГИ ===== */
+.bullets {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.bullets li {
+    padding-left: 24px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 24px 0;
+}
+
+/* ===== ПРОЦЕСС ===== */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.step__n {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.step__t {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.step__d {
+    color: var(--gray);
+    line-height: 1.5;
+}
+
+/* ===== ОТЗЫВЫ ===== */
+.review__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.review__who {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.review__tag {
+    background: var(--primary-light);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.review__text {
+    font-style: italic;
+    color: var(--dark);
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+}
+
+/* ===== FAQ ===== */
+.faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq__item {
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 0.8rem 1rem;
-    font-size: 1rem;
-    transition: all 0.2s;
-  }
+    margin-bottom: 16px;
+    overflow: hidden;
+}
 
-  .form-control:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(42, 107, 204, 0.15);
-  }
-
-  .btn-success {
-    background: var(--accent);
-    border: none;
-    border-radius: var(--radius);
-    padding: 0.9rem 2rem;
+.faq__item summary {
+    padding: 20px;
     font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.2s;
-    width: 100%;
-  }
+    color: var(--primary);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
 
-  .btn-success:hover {
-    background: #1E4E8C;
-  }
+.faq__item summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--accent);
+    transition: transform 0.3s;
+}
 
-  /* ===== ФУТЕР ===== */
-  footer {
-    background: var(--primary);
-    color: white;
-    padding: 3rem 0 1.5rem;
-  }
+.faq__item[open] summary::after {
+    transform: rotate(45deg);
+}
 
-  footer h5 {
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-  }
+.faq__item p {
+    padding: 0 20px 20px 20px;
+    margin: 0;
+    color: var(--gray);
+    line-height: 1.6;
+}
 
-  footer a {
-    color: #CBD5E0;
+/* ===== КОНТАКТЫ ===== */
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 40px;
+}
+
+.contact__label {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact__value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
     text-decoration: none;
+    margin-bottom: 8px;
     transition: color 0.2s;
-    font-weight: 400;
-  }
+}
 
-  footer a:hover {
-    color: white;
-  }
+.contact__value:hover {
+    color: var(--accent);
+}
 
-  /* ===== ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ ===== */
-  .badge-success {
-    background: var(--accent) !important;
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.8rem;
-  }
+.contact__hint {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
 
-  .text-muted {
-    color: var(--gray) !important;
-  }
-
-  hr {
-    opacity: 0.1;
-    margin: 2rem 0;
-  }
-
-  /* ===== АДАПТИВ ===== */
-  @media (max-width: 768px) {
-    .jumbotron h1 {
-      font-size: 2rem;
-    }
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+    .h1 { font-size: 2rem; }
+    .h2 { font-size: 1.8rem; }
+    .hero { padding: 60px 0; }
+    .section { padding: 60px 0; }
     
-    .jumbotron .lead {
-      font-size: 1.1rem;
+    .nav__toggle { display: block; }
+    .nav__links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+    .nav__links.active { display: flex; }
     
-    .jumbotron {
-      padding: 3rem 1rem;
-    }
-    
-    .display-4 {
-      font-size: 1.8rem;
-    }
-  }
+    .grid2, .grid3 { grid-template-columns: 1fr; }
+    .hero__cta { flex-direction: column; }
+    .contact { grid-template-columns: 1fr; padding: 30px 20px; }
+}
   </style>
 </head>
 
@@ -471,5 +725,6 @@
             <div class="contact__label">Telegram</div>
             <a class="contact__value" href="https://t.me/Shafkat_Gatin" target="_blank" rel="noopener">@Shafkat_Gatin</a>
             <div class="
+
 
 
